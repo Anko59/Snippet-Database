@@ -22,13 +22,15 @@ body:before {
   transition: all 0.4s ease;
 }
 .burger {
+  z-index: 10;
   display: none;
   position: fixed;
   top: 20px;
   left: 20px;
 }
 .burger__button {
-  display: block;
+  z-index: 10;
+  display: none;
   position: relative;
   background: #2196f3;
   width: 50px;
@@ -45,7 +47,7 @@ body:before {
   box-shadow: none;
 }
 .burger__button__icon {
-  display: inline-block;
+  display: none;
   position: absolute;
   background: #fff;
   margin: 0 auto;
@@ -119,4 +121,15 @@ body:before {
 .burger__button.open + .burger__menu li {
   transform: translateX(0);
   visibility: visible;
+}
+@media screen and (max-width: 750px) {
+    .burger {
+        display: inline;
+    }
+    .burger__button {
+      display: inline;
+    }
+    .burger__button__icon {
+      display: inline;
+    }
 }
